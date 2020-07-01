@@ -59,23 +59,28 @@
             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
+                <span class="badge badge-danger badge-counter">{{ Auth::user()->unreadNotifications->count() }}</span>
             </a>
             <!-- Dropdown - Messages -->
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
   Message Center
 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+            @foreach (Auth::user()->Notifications as $item)
+                <a 
+                    class="dropdown-item d-flex align-items-center @if(is_null($item->read_at))unread @endif"
+                    href="{{ route('order', $item->data['id'])}}">
                     <div class="dropdown-list-image mr-3">
-                        <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                        <img class="rounded-circle" src="{{ asset('img/order.png')}}" alt="">
                         <div class="status-indicator bg-success"></div>
                     </div>
-                    <div class="font-weight-bold">
-                        <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                        <div class="small text-gray-500">Emily Fowler · 58m</div>
-                    </div>
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">{{ $item->data['title'] }}</div>
+                            <div class="small text-gray-700">{{ $item->data['content'] }}</div>
+                            <div class="small text-gray-500 text-right">{{ $item->created_at->diffForHumans() }}</div>
+                        </div>
                 </a>
+            @endforeach
             </div>
         </li>
 

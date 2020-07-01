@@ -3,9 +3,8 @@
     Tìm kiếm sản phẩm
 @endsection
 @section('content')
-<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-    <span>T</span>ìm
-    <span>K</span>iếm</h3>
+<h1 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+   Tìm kiếm </h1>
 <!-- //tittle heading -->
 <div class="row">
     <!-- product left -->
@@ -31,6 +30,7 @@
                             @endif
                             <div class="item-info-product text-center border-top mt-4">
                                 <h4 class="pt-1">
+                                    <span class="left-product" >(Còn {{$pr->quantity}} sản phẩm)</span>
                                     <a class="d-inline-block text-truncate" style="max-width: 200px" href="{{$pr->slug}}.html">{{$pr->name}}</a>
                                 </h4>
                                 <div class="info-product-price my-2">
@@ -42,7 +42,11 @@
                                     @endif 
                                 </div>
                                 <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                <a href="{{asset('cart/add/'.$pr->id)}}"><input type="button" name="button" value="Thêm vào giỏ hàng" class="button btn" /></a>
+                                    @if ($pr->quantity >0)
+                                    <input type="button" name="button" value="Thêm vào giỏ hàng" class="btn btn-success add_cart" data-id ="{{$pr->id}}"/>
+                                @else
+                                        <input type="button" name="button" value="Sản Phẩm Hết Hàng" class="btn btn-danger" disabled />
+                                @endif
                                 </div>
                             </div>
                         </div>
@@ -53,5 +57,82 @@
         </div>
         <!-- //product right -->
     </div>
+    <div class="col-lg-3 mt-lg-0 mt-4 p-lg-0">
+        <div class="side-bar p-sm-4 p-3">
+            <!-- price -->
+            <div class="range border-bottom py-2">
+                <h3 class="agileits-sear-head mb-3">Lọc theo giá</h3>
+                <div class="w3l-range">
+                    <div id="slider-handles" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr">
+                    </div>
+                </div>
+            </div>
+            <!-- //price -->
+            <!-- electronics -->
+            <div class="left-side border-bottom py-2">
+                <h3 class="agileits-sear-head mb-3">Loại sản phẩm</h3>
+                <ul>
+                    @foreach ($producttype as $index => $cate)
+                        <li class="@if($index > 4)none cate-none @endif">
+                            <input 
+                                type="checkbox"
+                                class="checked cate-type"
+                                id="cate-{{ $cate->id }}"
+                                value="{{ $cate->id }}"
+                            >
+                            <label class="span" for="cate-{{ $cate->id }}" style="cursor:pointer">{{ $cate->name }}</label>
+                        </li>
+                    @endforeach
+                    <div class="text-center">
+                        @if($producttype->count() > 4) 
+                            <a href="javascript:void(0)" class="badge bagde-primary view-more" id="view-more">Xem thêm</a>
+                        @endif
+                    </div>
+                </ul>
+                <button class="btn btn-sm btn-primary pull-right" id="btn-search">Lọc</button>
+            </div>
 </div>
 @endsection
+@section('script')
+    <script>
+        var handlesSlider = document.getElementById('slider-handles');
+        noUiSlider.create(handlesSlider, {
+            start: [0, 30000000],
+            tooltips: [true, true],
+            step: 500000,
+            range: {
+                'min': [0],
+                'max': [30000000]
+            }   
+        }).on('end', (val, handle) => {
+            let types = getChecked();
+            window.location.replace(`/search?from=${val[0]}&to=${val[1]}&cate-types=${types}`)
+        });
+
+        function getChecked() {
+            let types = [];
+                $('.cate-type').each( (index, item) => {
+                    if ($(item).is(':checked')) {
+                        types.push($(item).val())
+                    }
+                });
+            return types;
+        }
+
+        $('#btn-search').click(function() {
+            let val = handlesSlider.noUiSlider.get();
+            let types = getChecked();
+            window.location.replace(`/search?from=${val[0]}&to=${val[1]}&cate-types=${types}`)
+        });
+
+        $('#view-more').click( function() {
+            $('.cate-none').each( (index, item) => {
+                if ($(item).hasClass('none')) {
+                    $(item).removeClass('none');
+                } else {
+                    $(item).addClass('none');
+                }
+            });
+        });
+    </script>
+    @endsection

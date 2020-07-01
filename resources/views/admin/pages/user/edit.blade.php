@@ -19,7 +19,7 @@
             <form role="form" action="admin/user/edit/{{$user->id}}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label class="col-form-label">Họ và Tên</label>
+                        <label class="col-form-label">Name</label>
                     <input type="text" value="{{$user->name}}" class="form-control{{ $errors->has('name') ? ' is-invalid': '' }}"  name="name" required="">
                         @if ($errors->has('name'))
                         <div class="invalid-feedback">
@@ -38,8 +38,8 @@
                     </div>
                     <div class="form-group">
                         <input type="checkbox" id="changePassword" name="changePassword">
-                        <label class="col-form-label">Mật khẩu</label>
-                        <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid': '' }}" placeholder="Nhập mật khẩu" name="password" id="password1" required="" disabled>
+                        <label class="col-form-label">Password</label>
+                        <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid': '' }}" placeholder="Enter the pasword" name="password" id="password1" required="" disabled>
                         @if ($errors->has('password'))
                         <div class="invalid-feedback">
                             {{$errors->first('password')}}
@@ -47,11 +47,11 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label class="col-form-label">Nhập lại mật khẩu</label>
-                        <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" name="password_confirmation" id="password2" required="" disabled>
+                        <label class="col-form-label">Re-Password</label>
+                        <input type="password" class="form-control" placeholder="Re-enter the password" name="password_confirmation" id="password2" required="" disabled>
                     </div>
                     <div class="form-group">
-                        <label class="col-form-label">Địa chỉ</label>
+                        <label class="col-form-label">Address</label>
                         <input class="form-control" value="{{$user->address}}"  name="address" >
                     </div>
                     <div class="form-group">
@@ -64,14 +64,14 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label>Quyền</label>
+                        <label>Role</label>
                         <select class="form-control" name="role">
-                            <option value="0">Người dùng</option>
-                            <option value="1">Admin</option>
+                            <option @if($user->role == 0) {{"selected"}} @endif value="0">User</option>
+                            <option @if($user->role == 1) {{"selected"}} @endif value="1">Admin</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-success">Sửa</button>
-                    <button type="reset" class="btn btn-primary">Làm mới</button>
+                    <button type="submit" class="btn btn-success">Edit</button>
+                    <button type="reset" class="btn btn-primary">Refresh</button>
                 </form>
             </div>
         </div>

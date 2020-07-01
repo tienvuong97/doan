@@ -28,6 +28,19 @@
 	<!-- web fonts -->
 	<link href="{{asset('assets/client/css/lato.css')}}" rel="stylesheet">
 	<link href="{{asset('assets/client/css/opensans.css')}}" rel="stylesheet">
+	<link href="{{asset('assets/admin/css/toastr.css')}}" rel="stylesheet">
+	<link rel="stylesheet" href="{{ asset('css/plugin.css') }}">
+	<style>
+		.none {
+			display: none !important;
+		}
+		.left-product{
+			position: absolute;
+			bottom: 115px;
+			font-size: 16px;
+			left: 60px;
+		}
+	</style>
 	<!-- //web fonts -->
 
 </head>
@@ -191,7 +204,9 @@
 			$('#modal-register').modal('show')
 		</script>				
 	@endif
+	<script src="{{asset('js/plugin.js')}}"></script>
 	@yield('script')
+	<script src="{{ asset('assets/admin/js/toastr.min.js') }}"></script>
 </body>
 
 </html>

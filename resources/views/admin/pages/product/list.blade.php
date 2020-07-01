@@ -19,24 +19,24 @@
                     <tr>
                         <th>STT</th>
                         <th>Name</th>
-                        <th>Mô tả</th>
-                        <th>Thông tin</th>
+                        <th>Description</th>
+                        <th>Information</th>
                         <th>Category</th>
                         <th>Product Type</th>
                         <th>Status</th>
-                        <th>Chỉnh sửa</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>STT</th>
                         <th>Name</th>
-                        <th>Mô tả</th>
-                        <th>Thông tin</th>
+                        <th>Description</th>
+                        <th>Information</th>
                         <th>Category</th>
                         <th>Product Type</th>
                         <th>Status</th>
-                        <th>Chỉnh sửa</th>
+                        <th>Edit</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -46,22 +46,22 @@
                         <td>{{$value->name}}</td>
                         <td>{!! $value->description !!}</td>
                         <td>
-                            <b>Số lượng</b>: {{$value->quantity}}
+                            <b>Quantity</b>: {{$value->quantity}}
                             <br/>
-                            <b>Đơn giá</b>: {{$value->price}}
+                            <b>Price</b>: {{$value->price}}
                             <br/>
-                            <b>Khuyến mãi</b>: {{$value->promotional}}
+                            <b>Promotional</b>: {{$value->promotional}}
                             <br/>
-                            <b>Hình ảnh</b>: 
+                            <b>Image</b>: 
                             <img src="img/upload/product/{{$value->image}}" width="100" height="100"> 
                         </td>
                         <td>{{$value->productType->category->name}}</td>
                         <td>{{$value->productType->name}}</td>
                         <td>
                             @if ($value->status == 1)
-                                {{"Hiển thị"}}
+                                {{"Display"}}
                             @else
-                                {{"Không hiển thị"}}
+                                {{"Not Display"}}
                             @endif
                         </td>
                         <td>

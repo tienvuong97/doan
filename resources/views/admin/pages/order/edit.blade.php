@@ -35,7 +35,7 @@
                         <input class="form-control" name="phone" value="{{$order->phone}}" readonly>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label>Monney</label>
+                        <label>Money</label>
                         <input class="form-control" name="monney" value="{{$order->monney}}" readonly>
                     </fieldset>
                     <fieldset class="form-group">

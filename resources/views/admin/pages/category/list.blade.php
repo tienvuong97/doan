@@ -21,7 +21,7 @@
                         <th>Name</th>
                         <th>Slug</th>
                         <th>Status</th>
-                        <th>Chỉnh sửa</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -29,8 +29,8 @@
                         <th>STT</th>
                         <th>Name</th>
                         <th>Slug</th>
-                        <th>Status</th>
-                        <th>Chỉnh sửa</th>
+                        <th>Edit</th>
+                        <th></th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -41,9 +41,9 @@
                         <td>{{$value->slug}}</td>
                         <td>
                             @if ($value->status == 1)
-                                {{"Hiển thị"}}
+                                {{"Display"}}
                             @else
-                                {{"Không hiển thị"}}
+                                {{"Not display"}}
                             @endif
                         </td>
                         <td>

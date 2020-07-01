@@ -27,17 +27,17 @@
                     @csrf
                     <fieldset class="form-group">
                         <label>Name</label>
-                        <input class="form-control" name="name" placeholder="Nhập tên danh mục">
+                        <input class="form-control" name="name" placeholder="Enter the category name">
                     </fieldset>
                     <div class="form-group">
                         <label>Status</label>
                         <select class="form-control" name="status">
-                            <option value="1">Hiển thị</option>
-                            <option value="0">Không hiển thị</option>
+                            <option value="1">Display</option>
+                            <option value="0">Not display</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-success">Thêm</button>
-                    <button type="reset" class="btn btn-primary">Làm mới</button>
+                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="reset" class="btn btn-primary">Refresh</button>
                 </form>
             </div>
         </div>

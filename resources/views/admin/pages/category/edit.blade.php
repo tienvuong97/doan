@@ -31,12 +31,12 @@
                     <div class="form-group">
                         <label>Status</label>
                         <select class="form-control" name="status">
-                            <option value ="1" @if($category->status == 1) {{'selected'}} @endif>Hiển thị</option>
-                            <option value ="0" @if($category->status == 0) {{'selected'}} @endif>Không hiển thị</option>
+                            <option value ="1" @if($category->status == 1) {{'selected'}} @endif>Display</option>
+                            <option value ="0" @if($category->status == 0) {{'selected'}} @endif>Not display</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-success">Sửa</button>
-                    <button type="reset" class="btn btn-primary">Làm mới</button>
+                    <button type="submit" class="btn btn-success">Edit</button>
+                    <button type="reset" class="btn btn-primary">Refresh</button>
                 </form>
             </div>
         </div>

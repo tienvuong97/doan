@@ -29,9 +29,17 @@
         <!-- //tittle heading -->
    
         <div class="checkout-right">
+            @if(session()->has('message'))
+                <div class="alert alert-danger">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
             <h4 class="mb-sm-4 mb-3">Bạn có tổng cộng:
             <span>{{$cart->count()}} sản phẩm</span>
             </h4>
+            {{-- add mesage when occure errors --}}
+            
+
             <div class="table-responsive">
                 <table class="timetable_sub">
                     <thead>
@@ -116,7 +124,12 @@
 								<button type="submit" class="submit check_out btn">Tiến hành mua hàng</button>
 							</div>
 						</div>
-					</form>
+                    </form>
+                    <div class="checkout-right-basket">
+						<a href="{{asset('history')}}">Lịch sử mua hàng
+							<span class="far fa-hand-point-right"></span>
+						</a>
+					</div>
             </div>
         </div>
     </div>

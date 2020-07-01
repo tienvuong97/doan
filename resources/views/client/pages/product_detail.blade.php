@@ -27,9 +27,8 @@
 	<div class="banner-bootom-w3-agileits py-5">
 		<div class="container py-xl-4 py-lg-2">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>S</span>ản
-				<span>P</span>hẩm</h3>
+			<h1 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+				Sản phẩm</h1>
 			<!-- //tittle heading -->
 			<div class="row">
 				<div class="col-lg-5 col-md-8 single-right-left ">
@@ -55,7 +54,8 @@
 				</div>
 
 				<div class="col-lg-7 single-right-left simpleCart_shelfItem">
-                    <h3 class="mb-3">{{$product_detail->name}}</h3>
+					<h3 class="mb-3">{{$product_detail->name}}</h3>
+					<h6>( Còn {{$product_detail->quantity}} sản phẩm )</h6>
 					<p class="mb-3">
                         @if($product_detail->promotional>0)
 						<span class="item_price">{{number_format($product_detail->promotional)}}</span>
@@ -95,7 +95,11 @@
 					</div>
 					<div class="occasion-cart">
 						<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                            <a href="{{asset('cart/add/'.$product_detail->id)}}"><input type="button" name="button" value="Thêm vào giỏ hàng" class="button btn" /></a>
+                            @if ($product_detail->quantity > 0)
+								<input type="button" name="button" value="Thêm vào giỏ hàng" class="btn btn-success add_cart" data-id ="{{$product_detail->id}}"/>
+							@else
+								<input type="button" name="button" value="Sản Phẩm Hết Hàng" disabled class="btn btn-danger" />
+							@endif
                         </div>
 					</div>
 				</div>

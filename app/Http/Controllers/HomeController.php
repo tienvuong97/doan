@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use Cart;
 use App\Models\User;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\OrderDetail;
 use App\Models\ProductType;
-use Cart;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -49,7 +52,19 @@ class HomeController extends Controller
         return view('client.pages.profile');
     }
     public function getSearch(Request $request){
-        $product = Product::where('name','like','%'.$request->key.'%')->orWhere('price',$request->key)->get();
+        $data = $request->all();
+        $types = explode(',', $request->input('cate-types'));
+        $search = [$data['from'] ?? '', $data['to'] ?? ''];
+        $product = Product::with('productType')
+                            ->where('name','like','%'.str_replace(' ', '', $request->key).'%')
+                            ->when(!empty($search[0]), function($query) use($search) {
+                                $query->WhereBetween('price', $search);
+                            })
+                            ->when(!empty($types[0]), function($query) use($types) {
+                                $query->whereIn('idProductType', $types);
+                            })
+                            ->get();
         return view('client.pages.search',['product'=>$product]);
     }
+    
 }

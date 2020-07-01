@@ -33,7 +33,7 @@
                     <div class="form-group">
                         <label>Category</label>
                         <select class="form-control idCategory" name="idCategory">
-                            <option selected disabled>Chọn danh mục</option>
+                            <option selected disabled>Select Category</option>
                             @foreach ($category as $ct)
                             <option value="{{$ct->id}}">{{$ct->name}}</option>
                             @endforeach
@@ -42,50 +42,50 @@
                     <div class="form-group">
                         <label>Product Type</label>
                         <select class="form-control idProductType" name="idProductType">
-                            <option selected disabled>Chọn loại sản phẩm</option>
+                            <option selected disabled>Select Product Type</option>
                         </select>
                     </div>
                     <fieldset class="form-group">
                         <label>Name</label>
-                        <input class="form-control" name="name" placeholder="Nhập tên sản phẩm">
+                        <input class="form-control" name="name" placeholder="Enter the product name">
                     </fieldset>
                     <div class="form-group">
-                        <label for="quantity">Số lượng</label>
+                        <label for="quantity">Quantity</label>
                         <input type="number" name="quantity" min="1" value="1" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="price">Đơn giá</label>
-                        <input type="text" name="price" placeholder="Nhập đơn giá" class="form-control">
+                        <label for="price">Price</label>
+                        <input type="text" name="price" placeholder="Enter the unit price" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="quantity">Giá khuyến mãi</label>
-                        <input type="text" name="promotional" value="0" placeholder="Nhập giá khuyến mãi nếu có" class="form-control">
+                        <label for="quantity">Promotional</label>
+                        <input type="text" name="promotional" value="0" placeholder="Enter the promotional price if applicable" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="image">Ảnh minh họa</label>
+                        <label for="image">Image</label>
                         <input type="file" name="image" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Mô tả sản phẩm</label>
+                        <label>Description</label>
                         <textarea name="description" id="demo" class="form-control" cols="5" rows="5"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Chi tiết sản phẩm</label>
+                        <label>Detail</label>
                         <textarea name="detail" id="demo" class="form-control" cols="5" rows="5"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="quantity">Bảo hành</label>
-                        <input type="text" name="warranty" placeholder="Nhập thời gian bảo hành" class="form-control">
+                        <label for="quantity">Warranty</label>
+                        <input type="text" name="warranty" placeholder="Enter the warranty period" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Status</label>
                         <select class="form-control" name="status">
-                            <option value="1">Hiển thị</option>
-                            <option value="0">Không hiển thị</option>
+                            <option value="1">Display</option>
+                            <option value="0">Not Display</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-success">Thêm</button>
-                    <button type="reset" class="btn btn-primary">Làm mới</button>
+                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="reset" class="btn btn-primary">Refresh</button>
                 </form>
             </div>
         </div>

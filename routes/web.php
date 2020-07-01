@@ -23,7 +23,10 @@ Route::get('admin/login','UserController@getLoginAdmin');
 Route::post('admin/login','UserController@postLoginAdmin');
 Route::get('admin/logout','UserController@getLogoutAdmin');
 Route::post('buy','OrderController@postBuyy');
+Route::get('history','OrderController@getHistory');
+Route::get('order_detail/{id}','OrderController@orderDetail');
 Route::group(['prefix' => 'admin','middleware'=>'adminMiddleware'], function () {
+    Route::get('index','DashBoardController@dashBoard');
     Route::group(['prefix' => 'category'], function () {
         Route::get('list', 'CategoryController@getList');
         Route::get('add', 'CategoryController@getAdd');
@@ -60,10 +63,11 @@ Route::group(['prefix' => 'admin','middleware'=>'adminMiddleware'], function () 
         Route::get('list', 'OrderController@getList');
         Route::get('edit/{id}', 'OrderController@getEdit');
         Route::post('edit/{id}', 'OrderController@postEdit');
-        Route::get('order_detail/{id}', 'OrderController@getOrderDetail');
+        Route::get('order_detail/{id}', 'OrderController@getOrderDetail')->name('order');
     });
     Route::group(['prefix' => 'ajax'], function () {
         Route::get('producttype', 'AjaxController@getProductType');
+        Route::post('setorder', 'AjaxController@setOrderStatus');
     });
 });
 Route::get('callback/{social}','UserController@handleProviderCallback');

@@ -25,7 +25,7 @@
                             <a href="{{asset('profile')}}" class="text-white">
                                 <i class="fas fa-user"></i> {{Auth::user()->name}} </a>
                             @if(Auth::user()->role == 1)
-                            <a href="{{asset('admin/category/list')}}" style="margin-left: 1px" class="text-white">
+                            <a href="{{asset('admin/index')}}" style="margin-left: 1px" class="text-white">
                                 <i class="fas fa-cog" class="text-white"></i></a>
                             @endif
                             </li>

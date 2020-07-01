@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup>
+        <div class="sidebar-brand-text mx-3">Admin
         </div>
     </a>
 
@@ -14,9 +14,9 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="admin/index">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Trang chủ</span>
+            <span>Dashboard</span>
         </a>
     </li>
 
@@ -35,9 +35,9 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Danh mục sản phẩm</h6>
-            <a class="collapse-item" href="admin/category/list">Danh sách</a>
-            <a class="collapse-item" href="admin/category/add">Thêm</a>
+            <h6 class="collapse-header">Category</h6>
+            <a class="collapse-item" href="admin/category/list">List</a>
+            <a class="collapse-item" href="admin/category/add">Add</a>
           </div>
         </div>
       </li>
@@ -50,9 +50,9 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Loại sản phẩm</h6>
-            <a class="collapse-item" href="admin/producttype/list">Danh sách</a>
-            <a class="collapse-item" href="admin/producttype/add">Thêm</a>
+            <h6 class="collapse-header">Product Type</h6>
+            <a class="collapse-item" href="admin/producttype/list">List</a>
+            <a class="collapse-item" href="admin/producttype/add">Add</a>
           </div>
         </div>
       </li>
@@ -64,9 +64,9 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Sản phẩm</h6>
-            <a class="collapse-item" href="admin/product/list">Danh sách</a>
-            <a class="collapse-item" href="admin/product/add">Thêm</a>
+            <h6 class="collapse-header">Product</h6>
+            <a class="collapse-item" href="admin/product/list">List</a>
+            <a class="collapse-item" href="admin/product/add">Add</a>
           </div>
         </div>
       </li>
@@ -77,9 +77,9 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Người dùng</h6>
-            <a class="collapse-item" href="admin/user/list">Danh sách</a>
-            <a class="collapse-item" href="admin/user/add">Thêm</a>
+            <h6 class="collapse-header">User</h6>
+            <a class="collapse-item" href="admin/user/list">List</a>
+            <a class="collapse-item" href="admin/user/add">Add</a>
           </div>
         </div>
       </li>

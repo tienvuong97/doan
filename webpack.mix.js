@@ -12,4 +12,6 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .scripts(['node_modules/nouislider/distribute/nouislider.min.js'], 'public/js/plugin.js')
+    .styles(['node_modules/nouislider/distribute/nouislider.min.css'], 'public/css/plugin.css')
     .sass('resources/sass/app.scss', 'public/css');

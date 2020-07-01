@@ -15,9 +15,10 @@
                         <th>ID</th>
                         <th>IdOrde</th>
                         <th>IdProduct</th>
-                        <th>Số lượng</th>
-                        <th>Giá</th>
-                        <th>Ngày mua</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Created_at</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -25,9 +26,10 @@
                         <th>ID</th>
                         <th>IdOrde</th>
                         <th>IdProduct</th>
-                        <th>Số lượng</th>
-                        <th>Giá</th>
-                        <th>Ngày mua</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Created_at</th>
+                        <th>Created_at</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -36,6 +38,7 @@
                         <td>{{$value->id}}</td>
                         <td>{{$value->idOrder}}</td>
                         <td>{{$value->idProduct}}</td>
+                        <td>{{$value->name}}</td>
                         <td>{{$value->quantity}}</td>
                         <td>{{$value->price}}</td>
                         <td>{{$value->created_at}}</td>

@@ -4,9 +4,9 @@
 			<!-- footer first section -->
 			<h2 class="footer-top-head-w3l font-weight-bold mb-2">Electronics :</h2>
 			<p class="footer-main mb-4">
-				If you're considering a new laptop, looking for a powerful new car stereo or shopping for a new HDTV, we make it easy to
-				find exactly what you need at a price you can afford. We offer Every Day Low Prices on TVs, laptops, cell phones, tablets
-				and iPads, video games, desktop computers, cameras and camcorders, audio, video and more.</p>
+				Nếu bạn đang xem xét một máy tính xách tay mới, tìm kiếm một âm thanh nổi xe hơi mới mạnh mẽ hoặc mua một HDTV mới, chúng tôi sẽ dễ dàng
+tìm chính xác những gì bạn cần ở một mức giá bạn có thể đủ khả năng. Chúng tôi cung cấp giá thấp mỗi ngày trên TV, máy tính xách tay, điện thoại di động, máy tính bảng
+và iPad, trò chơi video, máy tính để bàn, máy ảnh và máy quay phim, âm thanh, video và hơn thế nữa.</p>
 			<!-- //footer first section -->
 			<!-- footer second section -->
 			<div class="row w3l-grids-footer border-top border-bottom py-sm-4 py-3">
@@ -16,8 +16,8 @@
 							<i class="fas fa-dolly"></i>
 						</div>
 						<div class="col-8 text-form-footer">
-							<h3>Free Shipping</h3>
-							<p>on orders over $100</p>
+							<h3>Miễn phí vận chuyển</h3>
+							<p>với đơn hàng trên 10 triệu VND</p>
 						</div>
 					</div>
 				</div>
@@ -27,8 +27,8 @@
 							<i class="fas fa-shipping-fast"></i>
 						</div>
 						<div class="col-8 text-form-footer">
-							<h3>Fast Delivery</h3>
-							<p>World Wide</p>
+							<h3>Chuyển phát nhanh</h3>
+							<p>Trên toàn đất nước</p>
 						</div>
 					</div>
 				</div>
@@ -38,8 +38,8 @@
 							<i class="far fa-thumbs-up"></i>
 						</div>
 						<div class="col-8 text-form-footer">
-							<h3>Big Choice</h3>
-							<p>of Products</p>
+							<h3>Nhiều sự lựa chọn</h3>
+							<p>của sản phẩm</p>
 						</div>
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 			<!-- //footer second section -->
 		</div>
 	</div>
-	<!-- footer third section -->
+	{{-- <!-- footer third section -->
 	<div class="w3l-middlefooter-sec">
 		<div class="container py-md-5 py-sm-4 py-3">
 			<div class="row footer-info w3-agileits-info">
@@ -159,7 +159,7 @@
 			<!-- //quick links -->
 		</div>
 	</div>
-	<!-- //footer third section -->
+	<!-- //footer third section --> --}}
 </footer>
 <!-- //footer -->
 <!-- copyright -->

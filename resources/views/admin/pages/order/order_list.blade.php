@@ -17,10 +17,10 @@
                         <th>Address</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Monney</th>
+                        <th>Money</th>
                         <th>Message</th>
                         <th>Status</th>
-                        <th>Chỉnh sửa</th>
+                        <th>Detail</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -30,10 +30,10 @@
                         <th>Address</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Monney</th>
+                        <th>Money</th>
                         <th>Message</th>
                         <th>Status</th>
-                        <th>Chỉnh sửa</th>
+                        <th>Detail</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -47,14 +47,17 @@
                         <td>{{$value->monney}}</td>
                         <td>{{$value->message}}</td>
                         <td>
-                            @if ($value->status == 1)
-                                {{"Đã giao hàng"}}
-                            @else
-                                {{"Chưa giao hàng"}}
-                            @endif
+                            <select name="gh" class="order-status" data-id={{$value->id}}>
+                                
+                                <option value="0" @if ($value->status==0) {{'selected'}}
+                                    
+                                @endif>Not delivery</option>
+                                <option value="1" @if ($value->status==1) {{'selected'}}
+                                    @endif>Delivered</option>
+                            </select>
                         </td>
                         <td>
-                        <a href="admin/order/edit/{{$value->id}}"><button class="btn btn-primary edit" type="button"><i class="fas fa-edit"></i></button></a>
+                        {{-- <a href="admin/order/edit/{{$value->id}}"><button class="btn btn-primary edit" type="button"><i class="fas fa-edit"></i></button></a> --}}
                         <a href="admin/order/order_detail/{{$value->id}}"><button class="btn btn-danger detail" type="button"><i class="fas fa-info-circle"></i></button></a>
                         </td>
                     </tr>

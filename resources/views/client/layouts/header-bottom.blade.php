@@ -16,7 +16,6 @@
                     <!-- search -->
                     <div class="col-10 agileits_search">
                         <form class="form-inline" action="{{asset('search')}}" method="get">
-                            @csrf
                             <input class="form-control mr-sm-2" type="search" name="key" placeholder="Nhập tên sản phẩm ..." aria-label="Search" required>
                             <button class="btn my-2 my-sm-0" type="submit">Tìm kiếm</button>
                         </form>
@@ -30,7 +29,7 @@
                             @else href="#" data-toggle="modal" data-target="#modal-login"
                             @endif  class="btn w3view-cart">
                                 <i class="fas fa-cart-arrow-down" title="{{Cart::getTotalQuantity()}}"></i>
-                                <span class="badge badge-light">{{Cart::getTotalQuantity()}}</span>
+                                <span class="badge badge-light count_cart">{{Cart::getTotalQuantity()}}</span>
                             </a>
                         </div>
                     </div>

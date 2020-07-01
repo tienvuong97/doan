@@ -38,7 +38,7 @@
                         </li>
                     @endforeach
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Liên hệ</a>
+                        <a class="nav-link" href="#">Liên hệ</a>
                     </li>
                 </ul>
             </div>

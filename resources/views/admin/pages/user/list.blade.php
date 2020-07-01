@@ -22,9 +22,8 @@
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Address</th>
-                        <th>Active</th>
                         <th>Role</th>
-                        <th>Chỉnh sửa</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -35,8 +34,7 @@
                         <th>Phone</th>
                         <th>Address</th>
                         <th>Active</th>
-                        <th>Role</th>
-                        <th>Chỉnh sửa</th>
+                        <th>Edit</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -47,12 +45,11 @@
                         <td>{{$value->email}}</td>
                         <td>{{$value->phone}}</td>
                         <td>{{$value->address}}</td>
-                        <td>{{$value->active}}</td>
                         <td>
                             @if ($value->role == 1)
                                 {{"Admin"}}
                             @else
-                                {{"Người dùng"}}
+                                {{"User"}}
                             @endif
                         </td>
                         <td>

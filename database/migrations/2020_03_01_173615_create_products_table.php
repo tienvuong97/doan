@@ -23,6 +23,8 @@ class CreateProductsTable extends Migration
             $table->decimal('price');
             $table->decimal('promotional');
             $table->integer('idProductType');
+            $table->text('warranty');
+            $table->text('detail');
             $table->integer('status')->default(1);
             $table->timestamps();
         });
